@@ -1,0 +1,75 @@
+import java.util.Scanner;
+public class Car {
+
+	private int amountOfFuel;
+    private String model;
+    
+    
+    public String getModel() {
+		return model;
+	}
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+
+
+	private String brand;
+  //Default constructor 
+    Car() {
+   	 model=" ";
+   	 brand=" ";
+   	 amountOfFuel=0;
+   	}
+    //parametrized constructor
+    Car(String brand, String model, int amountOfFuel) {
+   	 this.brand= brand;
+   	 this.model=model;
+   	 this.amountOfFuel=amountOfFuel;
+    }
+    public void brake(){
+        System.out.println("Car is breaking");
+    }
+    public void accelerate(){
+        if(amountOfFuel>0){
+        	amountOfFuel--;
+            System.out.print("Car is accelerating");
+            
+           
+        }
+        
+        
+            }
+            
+    public void printdata(){
+        System.out.println("Brand: "+brand);
+        System.out.println("Model: "+model);
+        System.out.println("Fuel:"+amountOfFuel);
+        
+        
+    }   
+    
+    
+   //main method for the main class
+	public static void main(String[] args) {
+		Car obj= new Car("Toyota","RAV4", 40);
+		obj.printdata();
+		String choice;
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("a=accelerate b=break x=exit");
+		
+	   do {
+		   choice=sc.nextLine();
+		if(choice.equals("a")) {
+			System.out.println("print something please");
+	    	obj.accelerate();
+	    }
+	    else if(choice.equals("b")) {
+	    	obj.brake();
+	    }
+	   
+	   } while(!choice.equals("x"));
+	   
+	}
+
+}
