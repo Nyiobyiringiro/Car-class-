@@ -4,7 +4,7 @@ public class Car {
 	private int amountOfFuel;
     private String model;
     
-    
+    //Class getter method 
     public String getModel() {
 		return model;
 	}
